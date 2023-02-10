@@ -10,6 +10,6 @@ namespace NLayer.Core.Entities.Abstractions
     {
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
     }
 }
