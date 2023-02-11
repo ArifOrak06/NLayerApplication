@@ -37,7 +37,7 @@ namespace NLayer.Repository.Repositories
          
         }
         //Veriler Memory'e alınmayacak, Business Logic olarak filter uygulanabilir data AsNoTracking().
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetAll()
         {
             return _dbSet.AsNoTracking().AsQueryable();
         }
