@@ -52,7 +52,7 @@ namespace NLayer.Service.Services
             var hasProduct = await _repository.GetByIdAsync(id);
             if (hasProduct == null)
             {
-                throw new ClientSideException($"{typeof(T).Name} bulunamadı");
+                throw new NotFoundException($"{typeof(T).Name}({id}) bulunamadı");
             }
             return hasProduct;
         }
