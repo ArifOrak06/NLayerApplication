@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using NLayer.Core.DTOs.CategoryDtos;
 using NLayer.Core.Services;
+using NLayer.WebAPI.Filters;
 
 namespace NLayer.WebAPI.Controllers
 {
-  
+
+ 
     public class CategoriesController : CustomBaseController
     {
         private readonly ICategoryService _categoryService;
