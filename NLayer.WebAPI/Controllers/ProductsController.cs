@@ -5,6 +5,7 @@ using NLayer.Core.DTOs.ProductDtos;
 using NLayer.Core.DTOs.ResponseDto;
 using NLayer.Core.Entities.Concrete;
 using NLayer.Core.Services;
+using NLayer.WebAPI.Filters;
 
 namespace NLayer.WebAPI.Controllers
 {
@@ -38,6 +39,7 @@ namespace NLayer.WebAPI.Controllers
             // result statusCode'una göre response dönecek CreateActionResult class'ı sayesinde
             return CreateActionResult<List<ProductDto>>(CustomResponseDto<List<ProductDto>>.Success(200, productsDto));
         }
+        [ServiceFilter(typeof(NotFoundFilter<>))]
         // GET localhost:7255/api/products/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
